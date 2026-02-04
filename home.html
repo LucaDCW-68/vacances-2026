@@ -1,14 +1,525 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vacances 2026</title>
-    <link rel="stylesheet" href="templates/template.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
-</head>
-<body>
-    <h1>Bienvenue sur le site des vacances à Split <span class="fi fi-hr"></span></h1>
-    
-</body>
+    <link rel="stylesheet" href="templates/template.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div>
+        <h1>
+          Bienvenue sur le site des vacances à Split
+          <span class="fi fi-hr"></span>
+        </h1>
+      </div>
+
+      <div class="appartements-container">
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart1-1.jpg" class="carrousel-image active" />
+                <img src="images/apart1-2.jpg" class="carrousel-image" />
+                <img src="images/apart1-3.jpg" class="carrousel-image" />
+                <img src="images/troll/troll1.jpeg" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Appartement BellaCosta III</h3>
+            <p class="prix">760€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>🍽️ BBQ</span>
+              <span>📶 WiFi</span>
+            </div>
+            <p class="description">
+              Appartement climatisé en bord de mer à Kaštela, à 400 m de la
+              plage, avec 1 chambre, cuisine équipée, terrasse, Wi-Fi et parking
+              gratuits, proche de l’aéroport de Split (1 km).
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartment-bellacosta-iii.fr.html?label=gx-fr-booking-booking-cos2&sid=93fb2ff3515239b375c25efbc36370ef&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&srpvid=694a73bdfc9d02de&srepoch=1769272096&matching_block_id=253212801_409650184_4_0_0&atlas_src=sr_iw_title"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart2-1.jpg" class="carrousel-image active" />
+                <img src="images/apart2-2.jpg" class="carrousel-image" />
+                <img src="images/apart2-3.jpg" class="carrousel-image" />
+                <img src="images/apart2-4.jpg" class="carrousel-image" />
+                <img src="images/troll/troll2.jpeg" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Apartman Laura</h3>
+            <p class="prix">778€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+              <span>🏦 Coffre fort</span>
+            </div>
+            <p class="description">
+              Appartement climatisé avec vue sur la mer à Solin, à 1,3 km du
+              site archéologique, avec 1 chambre, terrasse, cuisine équipée et
+              parking gratuit, à 15 km de l’aéroport de Split.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartman-laura-solin.fr.html?label=gx-fr-booking-booking-cos2&sid=93fb2ff3515239b375c25efbc36370ef&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&srpvid=694a73bdfc9d02de&srepoch=1769272111&matching_block_id=1013737801_376611984_4_0_0&atlas_src=sr_iw_title"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart3-1.jpg" class="carrousel-image active" />
+                <img src="images/apart3-2.jpg" class="carrousel-image" />
+                <img src="images/apart3-3.jpg" class="carrousel-image" />
+                <img src="images/apart3-4.jpg" class="carrousel-image" />
+                <img src="images/troll/troll3.jpeg" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Apartman Ella</h3>
+            <p class="prix">884€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+            </div>
+            <p class="description">
+              Appartement climatisé à Split, à 1,6 km de la plage de Duilovo,
+              avec 1 chambre, balcon, terrasse, cuisine équipée, Wi-Fi et
+              parking gratuits, à environ 6–7 km du centre et à 22 km de
+              l’aéroport.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartman-ella-split.fr.html?label=gx-fr-booking-booking-cos2&sid=93fb2ff3515239b375c25efbc36370ef&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&srpvid=694a73bdfc9d02de&srepoch=1769272136&matching_block_id=1419775301_413639807_4_0_0&atlas_src=sr_iw_title"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart4-1.jpg" class="carrousel-image active" />
+                <img src="images/apart4-2.jpg" class="carrousel-image" />
+                <img src="images/apart4-3.jpg" class="carrousel-image" />
+                <img src="images/apart4-4.jpg" class="carrousel-image" />
+                <img src="images/troll/troll4.jpeg" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Suit B&R</h3>
+            <p class="prix">806€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+              <span>🍽️ BBQ</span>
+            </div>
+            <p class="description">
+              Appartement climatisé avec vue sur la montagne à Split, avec 1
+              chambre, balcon, terrasse, jardin et parking gratuit, à 2,3 km du
+              stade Park Mladeži, proche du centre, et à 18 km de l’aéroport.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/suit-b-amp-r.fr.html?label=gx-fr-booking-booking-cos2&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&sr_order=price&nflt=roomfacility%3D34%3Bprice%3DEUR-min-200-1%3Bht_id%3D201%3Bentire_place_bedroom_count%3D1%3Broomfacility%3D99&srpvid=5a6c7c81f6830096&srepoch=1770140767&matching_block_id=861423801_389550815_0_0_0&atlas_src=sr_iw_title#map_closed"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart5-1.jpg" class="carrousel-image active" />
+                <img src="images/apart5-2.jpg" class="carrousel-image" />
+                <img src="images/apart5-3.jpg" class="carrousel-image" />
+                <img src="images/apart5-4.jpg" class="carrousel-image" />
+                <img src="images/apart5-5.jpg" class="carrousel-image" />
+                <img src="images/troll/troll5.PNG" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+                <span class="indicator" onclick="allerAImage(5, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Apartman Ana</h3>
+            <p class="prix">857€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+              <span>🍽️ BBQ</span>
+              <span>🚎 Navette aéroport</span>
+            </div>
+            <p class="description">
+              Appartement climatisé avec vue sur la montagne à Kaštela, à 2,5 km
+              de la plage de Gojača, avec 2 chambres, terrasse, jardin, Wi-Fi et
+              parking gratuits, barbecue et location de vélos, à 12 km de
+              l’aéroport de Split.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartment-ana-kastel-sucurac.fr.html?label=gx-fr-booking-booking-cos2&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&sr_order=price&nflt=roomfacility%3D34%3Bprice%3DEUR-min-200-1%3Bht_id%3D201%3Bentire_place_bedroom_count%3D1%3Broomfacility%3D99&srpvid=5a6c7c81f6830096&srepoch=1770140767&matching_block_id=631918701_246475199_4_0_0&atlas_src=sr_iw_title#map_closed"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart6-1.jpg" class="carrousel-image active" />
+                <img src="images/apart6-2.jpg" class="carrousel-image" />
+                <img src="images/apart6-3.jpg" class="carrousel-image" />
+                <img src="images/apart6-4.jpg" class="carrousel-image" />
+                <img src="images/troll/troll6.jpeg" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Sandy</h3>
+            <p class="prix">800€ au total</p>
+            <p class="capacite">5 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+            </div>
+            <p class="description">
+              Appartement climatisé en bord de mer, à quelques pas de la plage
+              Suhi Potok, avec 2 chambres, balcon, terrasse, vue mer, Wi-Fi et
+              parking gratuits, plage privée, à 33 km de l’aéroport de Split.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/sandy-suhi-potok.html?ssne=Jesenice&ssne_untouched=Jesenice&highlighted_hotels=12254847&ss=Jesenice&dest_id=1794&dest_type=region&hp_avform=1&origin=hp&do_availability_check=1&label=gx-fr-booking-booking-abs&aid=2369322&lang=fr&sb=1&src_elem=sb&src=hotel&checkin=2026-07-15&checkout=2026-07-23&group_adults=4&no_rooms=1&group_children=0#group_recommendation"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart7-1.jpg" class="carrousel-image active" />
+                <img src="images/apart7-2.jpg" class="carrousel-image" />
+                <img src="images/apart7-3.jpg" class="carrousel-image" />
+                <img src="images/apart7-4.jpg" class="carrousel-image" />
+                <img src="images/apart7-5.jpg" class="carrousel-image" />
+                <img src="images/troll/troll7.JPG" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+                <span class="indicator" onclick="allerAImage(5, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Apartman MIG</h3>
+            <p class="prix">778€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+              <span>🍽️ BBQ</span>
+            </div>
+            <p class="description">
+              Appartement climatisé avec vue sur la mer à Solin, à 800m du site
+              archéologique, avec 1 chambre, balcon, terrasse, jardin, Wi-Fi et
+              parking gratuits, aire de jeux et barbecue, à 15 km de l’aéroport
+              de Split.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartman-mig.fr.html?label=gx-fr-booking-booking-cos2&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&sr_order=price&nflt=roomfacility%3D34%3Bprice%3DEUR-min-200-1%3Bht_id%3D201%3Bentire_place_bedroom_count%3D1%3Broomfacility%3D99&srpvid=5a6c7c81f6830096&srepoch=1770140767&matching_block_id=344202501_275194039_4_0_0&atlas_src=sr_iw_title#map_opened-hotel_sidebar_static_map_capla"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="appartement-card">
+          <div class="carrousel-container">
+            <div class="carrousel">
+              <div class="carrousel-images">
+                <img src="images/apart8-1.jpg" class="carrousel-image active" />
+                <img src="images/apart8-2.jpg" class="carrousel-image" />
+                <img src="images/apart8-3.jpg" class="carrousel-image" />
+                <img src="images/apart8-4.jpg" class="carrousel-image" />
+                <img src="images/troll/troll8.JPG" class="carrousel-image" />
+              </div>
+              <button
+                class="carrousel-btn prev"
+                onclick="changerImage(-1, this)"
+              >
+                ‹
+              </button>
+              <button
+                class="carrousel-btn next"
+                onclick="changerImage(1, this)"
+              >
+                ›
+              </button>
+              <div class="carrousel-indicators">
+                <span
+                  class="indicator active"
+                  onclick="allerAImage(0, this)"
+                ></span>
+                <span class="indicator" onclick="allerAImage(1, this)"></span>
+                <span class="indicator" onclick="allerAImage(2, this)"></span>
+                <span class="indicator" onclick="allerAImage(3, this)"></span>
+                <span class="indicator" onclick="allerAImage(4, this)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="appartement-info">
+            <h3>Modern Apartment near Split & Trogir</h3>
+            <p class="prix">960€ au total</p>
+            <p class="capacite">4 personnes</p>
+            <div class="equipements">
+              <span>🧼 Lave Linge </span>
+              <span>🅿️ Parking</span>
+              <span>📶 WiFi</span>
+              <span>🍽️ BBQ</span>
+              <span>🚎 Navette Aéroport</span>
+            </div>
+            <p class="description">
+              Appartement climatisé près de Split et Trogir, à 1,7 km de la
+              plage de Kaštel Gomilica, avec 1 chambre, patio, jardin, Wi-Fi et
+              parking gratuits, location de vélos/voitures, à 9 km de l’aéroport
+              de Split.
+            </p>
+            <div class="actions">
+              <button class="btn-favoris">❤️</button>
+              <a
+                href="https://www.booking.com/hotel/hr/apartment-topic-kastel-gomilica.fr.html?label=gx-fr-booking-booking-cos2&aid=1799937&ucfs=1&checkin=2026-07-15&checkout=2026-07-23&dest_id=1794&dest_type=region&group_adults=4&no_rooms=1&group_children=0&sr_order=price&nflt=roomfacility%3D34%3Bprice%3DEUR-min-200-1%3Bht_id%3D201%3Bentire_place_bedroom_count%3D1%3Broomfacility%3D99&srpvid=5a6c7c81f6830096&srepoch=1770140767&matching_block_id=212146301_409654807_4_0_0&atlas_src=sr_iw_title#map_closed"
+                target="_blank"
+                class="btn-reserver"
+                >Réserver sur Booking</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Tous droits réservés</p>
+    </footer>
+
+    <script src="script/appartements.js"></script>
+  </body>
 </html>

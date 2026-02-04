@@ -1,0 +1,431 @@
+/* Variables CSS pour une cohérence visuelle */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #27ae60;
+  --light-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Container principal */
+.main-container {
+  background: white;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Titre principal */
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin: 0 0 30px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Animation du drapeau */
+.fi-hr {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Grille principale des appartements - 4 colonnes sur desktop, 3 sur tablette */
+.appartements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Force exactement 4 colonnes sur grands écrans */
+@media (min-width: 1200px) {
+  .appartements-container {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1360px;
+  }
+}
+
+/* Force exactement 3 colonnes sur écrans moyens */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .appartements-container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1020px;
+  }
+}
+
+/* 2 colonnes sur tablettes */
+@media (min-width: 600px) and (max-width: 899px) {
+  .appartements-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 680px;
+  }
+}
+
+/* 1 colonne sur mobiles */
+@media (max-width: 599px) {
+  .appartements-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+/* Carte d'appartement */
+.appartement-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  width: 100%;
+}
+
+.appartement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(52, 152, 219, 0.05);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.appartement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.appartement-card:hover::before {
+  opacity: 1;
+}
+
+/* Carrousel d'images */
+.carrousel-container {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.carrousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carrousel-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carrousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.carrousel-image.active {
+  opacity: 1;
+}
+
+/* Boutons de navigation du carrousel */
+.carrousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: var(--transition);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carrousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carrousel-btn.prev {
+  left: 15px;
+}
+
+.carrousel-btn.next {
+  right: 15px;
+}
+
+/* Indicateurs du carrousel */
+.carrousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid white;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Informations de l'appartement */
+.appartement-info {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.appartement-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.prix {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin: 10px 0;
+  position: relative;
+}
+
+.capacite {
+  color: var(--text-light);
+  font-weight: 500;
+  margin: 8px 0 15px 0;
+  font-size: 1rem;
+}
+
+/* Équipements */
+.equipements {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.equipements span {
+  display: inline-flex;
+  align-items: center;
+  background: var(--light-bg);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.equipements span:hover {
+  transform: translateY(-1px);
+  background: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+}
+
+.description {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 15px 0;
+  font-size: 0.95rem;
+}
+
+/* Actions (boutons) */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-reserver {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--success-color), #58d68d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  flex: 1;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.btn-reserver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+.btn-favoris {
+  background: rgba(231, 76, 60, 0.1);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-favoris:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+  
+  .carrousel-container {
+    height: 250px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .btn-reserver {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .btn-favoris {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 10px;
+  }
+  
+  .appartement-info {
+    padding: 15px;
+  }
+  
+  .carrousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
