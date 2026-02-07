@@ -19,7 +19,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f5f7fa;
@@ -48,7 +50,7 @@ h1 {
 }
 
 h1::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
@@ -66,9 +68,16 @@ h1::after {
 }
 
 @keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
 }
 
 /* Grille principale des appartements - 4 colonnes sur desktop, 3 sur tablette */
@@ -124,7 +133,7 @@ h1::after {
 }
 
 .appartement-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -391,24 +400,24 @@ footer p {
   .main-container {
     padding: 15px;
   }
-  
+
   .carrousel-container {
     height: 250px;
   }
-  
+
   h1 {
     font-size: 1.8rem;
   }
-  
+
   .actions {
     flex-direction: column;
   }
-  
+
   .btn-reserver {
     min-width: auto;
     width: 100%;
   }
-  
+
   .btn-favoris {
     align-self: center;
   }
@@ -418,14 +427,115 @@ footer p {
   .main-container {
     padding: 10px;
   }
-  
+
   .appartement-info {
     padding: 15px;
   }
-  
+
   .carrousel-btn {
     width: 35px;
     height: 35px;
     font-size: 14px;
+  }
+}
+
+/* Styles pour l'indicateur d'indisponibilité */
+.appartement-indisponible {
+  position: relative;
+}
+
+.appartement-indisponible::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  border-radius: var(--border-radius);
+}
+
+.appartement-indisponible .overlay-indisponible {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(231, 76, 60, 0.6);
+  z-index: 101;
+  border: 4px solid #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse-indisponible 2s infinite;
+}
+
+@keyframes pulse-indisponible {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.6);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-15deg) scale(1.05);
+    box-shadow: 0 12px 40px rgba(231, 76, 60, 0.8);
+  }
+}
+
+.appartement-indisponible .carrousel-btn,
+.appartement-indisponible .indicator {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.appartement-indisponible .btn-reserver {
+  background: #95a5a6;
+  color: #7f8c8d;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.appartement-indisponible .btn-reserver:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.appartement-indisponible .btn-favoris {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Badge indisponible en haut à droite */
+.badge-indisponible {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  z-index: 102;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  animation: blink-badge 1.5s infinite;
+}
+
+@keyframes blink-badge {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
